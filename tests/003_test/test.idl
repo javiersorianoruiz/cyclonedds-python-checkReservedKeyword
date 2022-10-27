@@ -1,0 +1,7 @@
+module A {
+    module B {
+        struct C {
+            char D;
+        };
+    };
+};

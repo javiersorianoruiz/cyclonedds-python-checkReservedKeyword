@@ -1,0 +1,9 @@
+module A {
+    typedef int global[8]
+    typedef sequence<octet> raise;
+    struct B {
+        global if;
+        raise return;
+    };
+};
+

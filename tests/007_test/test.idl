@@ -1,8 +1,8 @@
 module A {
-    struct B {
+    struct and {
         char C;
     };
-    struct D : B {
+    struct D : and {
         char C;
     };
 };

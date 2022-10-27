@@ -1,0 +1,13 @@
+module A {
+    struct B {
+        int as;
+        union assert switch (as) {
+            case 1:
+                int break;
+            case 2:
+                char class[5];
+            default:
+                string continue;
+        };
+    };
+};

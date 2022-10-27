@@ -1,8 +1,7 @@
 module A {
+    const int lambda = 3;
     struct B {
         char C;
     };
-    struct D : B {
-        char C;
-    };
 };
+

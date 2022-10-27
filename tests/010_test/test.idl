@@ -1,0 +1,10 @@
+module A {
+    bitmask except {
+        finally,
+        for
+    };
+    struct B {
+        for from;
+    };
+};
+

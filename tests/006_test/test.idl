@@ -1,0 +1,6 @@
+module A {
+    struct True {
+        char C;
+        char pass[5];
+    };
+};

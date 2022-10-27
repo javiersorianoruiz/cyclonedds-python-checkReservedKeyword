@@ -1,0 +1,10 @@
+module A {
+    enum def {
+        del,
+        elif
+    };
+    struct B {
+        def else;
+    };
+};
+
