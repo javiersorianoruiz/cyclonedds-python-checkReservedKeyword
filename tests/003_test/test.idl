@@ -1,7 +1,7 @@
-module A {
-    module B {
-        struct C {
-            char D;
+module module_test_A {
+    module module_test_B
+        struct struct_test {
+            char var;
         };
     };
 };

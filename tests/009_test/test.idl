@@ -1,10 +1,9 @@
-module A {
+module module_test {
     enum def {
         del,
         elif
     };
-    struct B {
+    struct struct_test {
         def else;
     };
 };
-

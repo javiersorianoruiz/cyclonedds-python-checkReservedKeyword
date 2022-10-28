@@ -1,7 +1,7 @@
-module A {
+module module_test {
     typedef int global[8]
     typedef sequence<octet> raise;
-    struct B {
+    struct struct_test {
         global if;
         raise return;
     };

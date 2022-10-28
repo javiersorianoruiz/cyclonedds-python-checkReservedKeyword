@@ -1,8 +1,7 @@
 module in {
     module is {
-        struct B {
-            char C;
+        struct struct_test {
+            char var;
         };
     };
 };
-
