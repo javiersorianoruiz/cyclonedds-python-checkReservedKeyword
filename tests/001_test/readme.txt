@@ -1,7 +1,7 @@
 IDLC generation for python:
 IMPORTANT: Go to the path where the idl is located and executed (it doesn't work in other path):
 cd /app/helloworld_topic
-rm -rf HelloWorldData/* && /usr/local/lib/cyclonedds/bin/idlc -l/usr/local/lib/python3.8/dist-packages/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o /app/helloworld_topic /app/helloworld_topic/HelloWorldData.idl
+rm -rf module_test/* && /usr/local/lib/cyclonedds/bin/idlc -l/usr/local/lib/python3.8/dist-packages/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o /home/jasorian/cyclonedds-python-checkReservedKeyword/tests/001_test /home/jasorian/cyclonedds-python-checkReservedKeyword/tests/001_test/test.idl
 
 In a second terminal, (don't reuse the previous terminal used for the IDL generation for python) 
 compile and update lib idlpy (plugin python idlc)

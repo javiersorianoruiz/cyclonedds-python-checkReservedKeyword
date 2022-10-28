@@ -1,5 +1,5 @@
-module A {
-    struct B {
-        char C;
+module module_test {
+    struct struct_test {
+        char var;
     };
 };
