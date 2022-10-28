@@ -45,15 +45,18 @@ if [ "$NUMBER_SUBFOLDERS" -gt 1 ]; then
     exit
 fi
 
-IDL_FOLDER=`ls -d */`
-echo "Deleting files in folder $WORK_PATH/$IDL_FOLDER"
-rm -rf $WORK_PATH/$IDL_FOLDER/*
+if [ "$NUMBER_SUBFOLDERS" -eq 1 ]; then
+    IDL_FOLDER=`ls -d */`
+    echo "Deleting files in folder $WORK_PATH/$IDL_FOLDER"
+    rm -rf $WORK_PATH/$IDL_FOLDER/*
+fi
 
 echo "Generating python file from IDL file" $IDL_FILE
 
 /usr/local/lib/cyclonedds/bin/idlc -l/usr/local/lib/python3.8/dist-packages/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o ${WORK_PATH} ${WORK_PATH}/$IDL_FILE
 
 name=$(echo "test.idl" | cut -f 1 -d '.')
+IDL_FOLDER=`ls -d */`
 IDL_FILE_GENERATED=$WORK_PATH/$IDL_FOLDER"_"
 IDL_FILE_GENERATED=$IDL_FILE_GENERATED$(echo $IDL_FILE | cut -f 1 -d '.')
 IDL_FILE_GENERATED=$IDL_FILE_GENERATED".py"
