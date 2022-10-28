@@ -51,7 +51,6 @@ rm -rf $WORK_PATH/$IDL_FOLDER/*
 
 echo "Generating python file from IDL file" $IDL_FILE
 
-#/usr/local/lib/cyclonedds/bin/idlc -l/usr/local/lib/python3.8/dist-packages/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o /home/jasorian/cyclonedds-python-checkReservedKeyword/tests/001_test /home/jasorian/cyclonedds-python-checkReservedKeyword/tests/001_test/test.idl
 /usr/local/lib/cyclonedds/bin/idlc -l/usr/local/lib/python3.8/dist-packages/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o ${WORK_PATH} ${WORK_PATH}/$IDL_FILE
 
 name=$(echo "test.idl" | cut -f 1 -d '.')
