@@ -1,8 +1,8 @@
-module A {
+module module_test {
     struct and {
-        char C;
+        char var;
     };
-    struct D : and {
-        char C;
+    struct try : and {
+        char var;
     };
 };

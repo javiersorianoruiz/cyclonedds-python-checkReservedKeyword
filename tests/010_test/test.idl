@@ -1,9 +1,9 @@
-module A {
+module module_test {
     bitmask except {
         finally,
         for
     };
-    struct B {
+    struct struct_test {
         for from;
     };
 };

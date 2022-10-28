@@ -1,5 +1,5 @@
 module import {
-    struct B {
-        char C;
+    struct struct_test {
+        char var;
     };
 };

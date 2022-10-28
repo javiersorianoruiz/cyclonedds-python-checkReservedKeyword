@@ -16,11 +16,7 @@ from cyclonedds.topic import Topic
 from cyclonedds.sub import Subscriber, DataReader
 from cyclonedds.util import duration
 
-from HelloWorldData import Msg
-
-# This is the subscriber in the Vehicle Demo. It publishes a randomly moving
-# vehicle updated every 0.1-1.0 seconds randomly. The 'Vehicle' class was
-# generated from the vehicle.idl file with `idlc -l py vehicle.idl`
+from module_test import struct_test
 
 class MyListener(Listener):
     def on_liveliness_changed(self, reader, status):
@@ -36,10 +32,8 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-#topic = Topic(domain_participant, 'Vehicle', Vehicle, qos=qos)
-#HelloWorldData_Msg
-#topic = Topic(domain_participant, 'Msg', Msg, qos=qos)
-topic = Topic(domain_participant, 'HelloWorldData_Msg' , Msg)
+#modify for each test
+topic = Topic(domain_participant, 'module_test_struct_test_010' , struct_test)
 subscriber = Subscriber(domain_participant)
 reader = DataReader(domain_participant, topic, listener=listener)
 

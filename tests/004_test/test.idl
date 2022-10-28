@@ -1,8 +1,8 @@
-module A {
-    struct B {
+module module_test {
+    struct struct_test {
         char bool;
         char False;
-        None C; 
+        None var; 
     };
 };
 
