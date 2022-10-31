@@ -1,8 +1,8 @@
 module module_test {
-    struct and {
+    struct parent {
         char var;
     };
-    struct child : and {
+    struct child : parent { //We have seen in the python code generated that inheritance is not implemented
         char var2;
     };
 };

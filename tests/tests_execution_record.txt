@@ -1,22 +1,71 @@
-TEST        Responsible         Date Execution      Result
+TEST            Description                 Responsible         Date Execution      Result
 
-001_test    Javier Soriano      31-oct-22           OK
-002_test    Jorge Alejandre
-003_test    Victor Loeches
-004_test    Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
-005_test    Jorge Alejandre
-006_test    Victor Loeches                          changed IDL, struct True is not allowed by the IDLC compiler, it raises a syntax error.
-                                                    See 007_test_a
-007_test_a  Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of structs with a name == python reserved keywords
-                                                    FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_struct
-007_test_b  Javier Soriano      31-oct-22           
+001_test        Module and struct           Javier Soriano      31-oct-22           OK
+                without any keyword
+
+002_test        inheritance of structs      Jorge Alejandre
+                without any keyword
+
+003_test        nested modules              Victor Loeches
+                without any keyword
+
+004_test        field names of a struct     Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
+                with python reserverd keywords
+
+005_test        Module and struct           Jorge Alejandre
+                without any keyword
+                It seems the same test than 001_test 
+
+006_test        struct name keyword         Victor Loeches                          changed IDL, struct True is not allowed by the IDLC compiler, it raises a syntax error.
+                field array with name keyword                                       See 007_test_a   
                                                     
+007_test_a      struct name keyword         Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of structs with a name == python reserved keywords
+                Similar to test 006_test                                            FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_struct
+                No field array with name keyword
 
-008_test    Jorge Alejandre
-009_test    Victor Loeches
-010_test    Javier Soriano
-011_test    Jorge Alejandre
-012_test    Victor Loeches
-013_test    Javier Soriano
-014_test    Jorge Alejandre
-015_test    Victor Loeches
+007_test_b      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
+                without any keyword                                                 NOTE: We have seen in the python code generated that inheritance is not implemented
+                                                    
+007_test_c      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
+                parent name a keyword                                               NOTE: We have seen in the python code generated that inheritance is not implemented
+
+007_test_d      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
+                child name a keyword                                                NOTE: We have seen in the python code generated that inheritance is not implemented
+
+007_test_e      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
+                child and parent names keywords                                     NOTE: We have seen in the python code generated that inheritance is not implemented
+
+
+008_test        union with keywords         Jorge Alejandre
+                name field in the struct keyword
+                name union in the struct keyword
+                name fields in the union keywords
+
+009_test        enum with keywords          Victor Loeches
+                name enum in the struct keyword
+                name enumerated values in the enum keywords
+                name field in the struct keyword (type previous enum)
+
+010_test_a      bitmask                     Javier Soriano      31-oct-22           OK
+                without any keyword
+
+010_test_b      bitmask                     Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of bitmask with a name == python reserved keywords
+                with name python keyword                                            FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_bitmask
+                                                                                    FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/naming.c 
+                                                                                            new include : #include "types.h"
+                                                                                            method absolute_name
+                                                                                            method idl_full_typename
+                                                                                    FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/context.c
+                                                                                            new include : #include "types.h"
+                                                                                            method write_module_headers
+                                                                                    FIXED, change code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.h
+                                                                                            function declaration 
+
+
+
+
+011_test                                Jorge Alejandre
+012_test                                    Victor Loeches
+013_test                                    Javier Soriano
+014_test                                    Jorge Alejandre
+015_test                                    Victor Loeches

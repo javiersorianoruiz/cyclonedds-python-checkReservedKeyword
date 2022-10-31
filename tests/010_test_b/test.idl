@@ -1,10 +1,10 @@
 module module_test {
-    bitmask bitmask_type {
+    bitmask import {
         value1,
         value2
     };
     struct struct_test {
-        bitmask_type bitmask_value;
+        import bitmask_value;
     };
 };
 

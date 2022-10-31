@@ -19,7 +19,6 @@ from cyclonedds.pub import Publisher, DataWriter
 from cyclonedds.topic import Topic
 from cyclonedds.util import duration
 
-#from module_test import _and
 from module_test import child
 
 qos = Qos(
@@ -31,16 +30,16 @@ qos = Qos(
 
 domain_participant = DomainParticipant(0)
 #modify for each test
-topic = Topic(domain_participant, 'module_test_struct_test_007', hijo)
+topic = Topic(domain_participant, 'module_test_struct_test_007_b', child)
 publisher = Publisher(domain_participant)
 writer = DataWriter(publisher, topic)
 
 
 #modify for each test
-msg = hijo(var2='z')
+msg = child(var2='z')
 
 while True:
     writer.write(msg)
     #modify for each test
-    print(">> Wrote _and msg")
+    print(">> Wrote child msg")
     time.sleep(3.0)
