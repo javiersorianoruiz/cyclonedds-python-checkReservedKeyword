@@ -5,8 +5,13 @@ TEST        Responsible         Date Execution      Result
 003_test    Victor Loeches
 004_test    Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
 005_test    Jorge Alejandre
-006_test    Victor Loeches
-007_test    Javier Soriano
+006_test    Victor Loeches                          changed IDL, struct True is not allowed by the IDLC compiler, it raises a syntax error.
+                                                    See 007_test_a
+007_test_a  Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of structs with a name == python reserved keywords
+                                                    FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_struct
+007_test_b  Javier Soriano      31-oct-22           
+                                                    
+
 008_test    Jorge Alejandre
 009_test    Victor Loeches
 010_test    Javier Soriano

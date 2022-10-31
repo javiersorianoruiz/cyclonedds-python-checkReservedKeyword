@@ -20,7 +20,7 @@ from cyclonedds.topic import Topic
 from cyclonedds.util import duration
 
 #from module_test import _and
-from module_test import child
+from module_test import _and
 
 qos = Qos(
     Policy.Reliability.BestEffort,
@@ -31,13 +31,13 @@ qos = Qos(
 
 domain_participant = DomainParticipant(0)
 #modify for each test
-topic = Topic(domain_participant, 'module_test_struct_test_007', hijo)
+topic = Topic(domain_participant, 'module_test_struct_test_007_a', _and)
 publisher = Publisher(domain_participant)
 writer = DataWriter(publisher, topic)
 
 
 #modify for each test
-msg = hijo(var2='z')
+msg = _and(var='z')
 
 while True:
     writer.write(msg)

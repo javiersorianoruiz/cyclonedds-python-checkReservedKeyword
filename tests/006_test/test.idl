@@ -1,5 +1,5 @@
 module module_test {
-    struct True {
+    struct global { //changed name struct from struct True to struct global, struct True is not allowed by the IDLC compiler, it raises a syntax error.
         char var;
         char pass[5];
     };
