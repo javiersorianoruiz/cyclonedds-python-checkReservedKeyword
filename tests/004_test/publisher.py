@@ -36,7 +36,7 @@ writer = DataWriter(publisher, topic)
 
 
 #modify for each test
-msg = struct_test(var='z')
+msg = struct_test(bool='a',_pass='b',_None='c')
 
 while True:
     writer.write(msg)

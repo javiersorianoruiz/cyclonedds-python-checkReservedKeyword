@@ -3,7 +3,7 @@ TEST        Responsible         Date Execution      Result
 001_test    Javier Soriano      31-oct-22           OK
 002_test    Jorge Alejandre
 003_test    Victor Loeches
-004_test    Javier Soriano
+004_test    Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
 005_test    Jorge Alejandre
 006_test    Victor Loeches
 007_test    Javier Soriano

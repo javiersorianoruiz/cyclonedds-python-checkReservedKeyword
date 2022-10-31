@@ -1,8 +1,8 @@
 module module_test {
     struct struct_test {
         char bool;
-        char False;
-        None var; 
+        char pass; //Originally char False, but IDLC raises a syntax error
+        char None; 
     };
 };
 
