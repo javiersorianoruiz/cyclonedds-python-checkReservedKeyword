@@ -1,5 +1,5 @@
 module module_test_A {
-    module module_test_B
+    module module_test_B {
         struct struct_test {
             char var;
         };
