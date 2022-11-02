@@ -61,6 +61,8 @@ TEST            Description                 Responsible         Date Execution  
                                                                                     FIXED, change code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.h
                                                                                             function declaration 
 
+010_test_c      bitmask                     Javier Soriano      02-nov-22           FAIL, We have not yet implemented renaming of a member of a value of a bitmask with a name == python reserved keyword
+                with a member value with a python keyword
 
 
 

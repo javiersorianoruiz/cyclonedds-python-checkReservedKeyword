@@ -1,0 +1,9 @@
+module module_test {
+    bitmask import {
+        yield,
+        value2
+    };
+    struct struct_test {
+        import bitmask_value;
+    };
+};
