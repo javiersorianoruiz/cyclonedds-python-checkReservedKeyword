@@ -74,5 +74,7 @@ TEST            Description                 Responsible         Date Execution  
 013_test        nested modules              Javier Soriano      02-nov-22           FAIL, We have not yet implemented modules with name == python reserved keyword
                 modules with name keywords                                          FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_
                 
-014_test                                    Jorge Alejandre
-015_test                                    Victor Loeches
+014_test        const int                   Jorge Alejandre
+                struct field name keyword
+
+015_test        annotations name keyword    Victor Loeches
