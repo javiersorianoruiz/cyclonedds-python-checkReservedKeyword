@@ -1,4 +1,4 @@
-TEST            Description                 Responsible         Date Execution      Result
+TEST            Description                 Responsible         Date Execution      Result (pub python - sub python)
 
 001_test        Module and struct           Javier Soriano      31-oct-22           OK
                 without any keyword
@@ -22,6 +22,7 @@ TEST            Description                 Responsible         Date Execution  
 007_test_a      struct name keyword         Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of structs with a name == python reserved keywords
                 Similar to test 006_test                                            FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_struct
                 No field array with name keyword
+                TESTED XTYPES OK (Python Pub, C Subsc)
 
 007_test_b      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
                 without any keyword                                                 NOTE: We have seen in the python code generated that inheritance is not implemented
@@ -68,8 +69,10 @@ TEST            Description                 Responsible         Date Execution  
 
 
 011_test        typedef with name keywords  Jorge Alejandre
-012_test        module with name keywords   Victor Loeches
-013_test        nested modules              Javier Soriano      02-nov-22
-                modules with name keywords
+012_test        module with name keywords   Victor Loeches      02-nov-22           OK, after solving the test 013_test
+
+013_test        nested modules              Javier Soriano      02-nov-22           FAIL, We have not yet implemented modules with name == python reserved keyword
+                modules with name keywords                                          FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_
+                
 014_test                                    Jorge Alejandre
 015_test                                    Victor Loeches

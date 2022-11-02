@@ -1,7 +1,16 @@
+// module parent {
+//     module child {
+//         struct struct_test {
+//             char var;
+//         };
+//     };
+// };
+
 module in {
-    module is {
-        struct struct_test {
-            char var;
-        };
-    };
+   module is {
+       struct struct_test {
+           char var;
+       };
+   };
 };
+
