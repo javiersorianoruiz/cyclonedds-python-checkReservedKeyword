@@ -6,7 +6,7 @@ TEST            Description                 Responsible         Date Execution  
 002_test        inheritance of structs      Jorge Alejandre
                 without any keyword
 
-003_test        nested modules              Victor Loeches
+003_test        nested modules              Victor Loeches	02-nov-22	    OK, tested with the version which solves the test
                 without any keyword
 
 004_test        field names of a struct     Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
