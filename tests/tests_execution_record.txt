@@ -3,10 +3,12 @@ TEST            Description                 Responsible         Date Execution  
 001_test        Module and struct           Javier Soriano      31-oct-22           OK
                 without any keyword
 
-002_test        inheritance of structs      Jorge Alejandre
-                without any keyword
+002_test        inheritance of structs      Víctor Loeches      03-nov-22           PENDING, tested with the version which solves the test.
+                without any keyword                                                 NOTE: We have seen in the Python code generated that inheritance is implemented.
+                                                                                          Current test is sending and receiving several messages of differents structs oh the same module.
+                                                                                          Jorge will investigate how to use inheritance in cyclonedds-python.
 
-003_test        nested modules              Victor Loeches	02-nov-22	    OK, tested with the version which solves the test
+003_test        nested modules              Víctor Loeches	02-nov-22	    OK, tested with the version which solves the test
                 without any keyword
 
 004_test        field names of a struct     Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
@@ -16,7 +18,7 @@ TEST            Description                 Responsible         Date Execution  
                 without any keyword
                 It seems the same test than 001_test 
 
-006_test        struct name keyword         Victor Loeches                          changed IDL, struct True is not allowed by the IDLC compiler, it raises a syntax error.
+006_test        struct name keyword         Víctor Loeches                          changed IDL, struct True is not allowed by the IDLC compiler, it raises a syntax error.
                 field array with name keyword                                       See 007_test_a   
                                                     
 007_test_a      struct name keyword         Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of structs with a name == python reserved keywords
@@ -24,17 +26,17 @@ TEST            Description                 Responsible         Date Execution  
                 No field array with name keyword
                 TESTED XTYPES OK (Python Pub, C Subsc)
 
-007_test_b      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
-                without any keyword                                                 NOTE: We have seen in the python code generated that inheritance is not implemented
+007_test_b      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
+                without any keyword                                                 NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
                                                     
-007_test_c      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
-                parent name a keyword                                               NOTE: We have seen in the python code generated that inheritance is not implemented
+007_test_c      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
+                parent name a keyword                                               NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
 
-007_test_d      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
-                child name a keyword                                                NOTE: We have seen in the python code generated that inheritance is not implemented
+007_test_d      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
+                child name a keyword                                                NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
 
-007_test_e      inheritance of structs      Javier Soriano      31-oct-22           OK, tested with the version which solves the test: 007_test_a
-                child and parent names keywords                                     NOTE: We have seen in the python code generated that inheritance is not implemented
+007_test_e      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
+                child and parent names keywords                                     NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
 
 
 008_test        union with keywords         Jorge Alejandre
@@ -42,7 +44,7 @@ TEST            Description                 Responsible         Date Execution  
                 name union in the struct keyword
                 name fields in the union keywords
 
-009_test        enum with keywords          Victor Loeches
+009_test        enum with keywords          Víctor Loeches
                 name enum in the struct keyword
                 name enumerated values in the enum keywords
                 name field in the struct keyword (type previous enum)

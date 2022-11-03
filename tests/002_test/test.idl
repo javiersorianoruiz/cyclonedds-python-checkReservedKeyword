@@ -3,6 +3,6 @@ module module_test {
         char var;
     };
     struct struct_test_B : struct_test_A {
-        char var;
+        char var_2;
     };
 };
