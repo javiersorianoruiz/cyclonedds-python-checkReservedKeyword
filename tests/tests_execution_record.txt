@@ -22,7 +22,7 @@ TEST            Description                 Responsible         Date Execution  
                 field array with name keyword                                       See 007_test_a   
                                                     
 007_test_a      struct name keyword         Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of structs with a name == python reserved keywords
-                Similar to test 006_test                                            FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_struct
+                Similar to test 006_test                                            FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_struct
                 No field array with name keyword
                 TESTED XTYPES OK (Python Pub, C Subsc)
 
@@ -44,7 +44,17 @@ TEST            Description                 Responsible         Date Execution  
                 name union in the struct keyword
                 name fields in the union keywords
 
-009_test        enum with keywords          Víctor Loeches
+009_test_a      enum with keywords          Víctor Loeches      04-nov-22           FAIL, We have not yet implemented renaming of enums with a name == python reserved keywords
+                                            Javier Soriano                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_enum
+                name enum in the struct keyword
+           
+009_test_b      enum with keywords          Víctor Loeches      04-nov-22           FAIL, We have not yet implemented renaming of enums with a name == python reserved keywords
+                                            Javier Soriano                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_enum
+                name enum in the struct keyword
+                name enumerated values in the enum keywords
+
+009_test_c      enum with keywords          Víctor Loeches      04-nov-22           FAIL, We have not yet implemented renaming of enums with a name == python reserved keywords
+                                            Javier Soriano                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_enum
                 name enum in the struct keyword
                 name enumerated values in the enum keywords
                 name field in the struct keyword (type previous enum)
@@ -53,19 +63,19 @@ TEST            Description                 Responsible         Date Execution  
                 without any keyword
 
 010_test_b      bitmask                     Javier Soriano      31-oct-22           FAIL, We have not yet implemented renaming of bitmask with a name == python reserved keywords
-                with name python keyword                                            FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_bitmask
-                                                                                    FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/naming.c 
+                with name python keyword                                            FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_bitmask
+                                                                                    FIXED, changed code: cyclonedds-python/idlpy/src/naming.c 
                                                                                             new include : #include "types.h"
                                                                                             method absolute_name
                                                                                             method idl_full_typename
-                                                                                    FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/context.c
+                                                                                    FIXED, changed code: cyclonedds-python/idlpy/src/context.c
                                                                                             new include : #include "types.h"
                                                                                             method write_module_headers
-                                                                                    FIXED, change code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.h
+                                                                                    FIXED, change code: cyclonedds-python/idlpy/src/types.h
                                                                                             function declaration 
 
 010_test_c      bitmask                     Javier Soriano      02-nov-22           FAIL, We have not yet implemented renaming of a member of a value of a bitmask with a name == python reserved keyword
-                with a member value with a python keyword                           FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c +458
+                with a member value with a python keyword                           FIXED, changed code: cyclonedds-python/idlpy/src/types.c +458
                                                                                         modified method emit_bitmask, after for(idl_bit_value_t *v = bitmask->bit_values; v; v = idl_next(v)) {
 
 
@@ -74,7 +84,7 @@ TEST            Description                 Responsible         Date Execution  
 012_test        module with name keywords   Victor Loeches      02-nov-22           OK, after solving the test 013_test
 
 013_test        nested modules              Javier Soriano      02-nov-22           FAIL, We have not yet implemented modules with name == python reserved keyword
-                modules with name keywords                                          FIXED, changed code: /home/jasorian/cyclonedds-cxx/cyclonedds-python/idlpy/src/types.c method emit_
+                modules with name keywords                                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_
                 
 014_test        const int                   Jorge Alejandre
                 struct field name keyword
