@@ -1,13 +1,28 @@
 module module_test {
     struct struct_test {
-        int as;
-        union assert switch (as) {
+        int value_union;
+        union assert switch (value_union) {
             case 1:
-                int break;
+                int value_int;
             case 2:
-                char class[5];
+                char value_char_array[5];
             default:
-                string continue;
+                string value_string;
         };
     };
 };
+
+
+// module module_test {
+//     struct struct_test {
+//         int as;
+//         union assert switch (as) {
+//             case 1:
+//                 int break;
+//             case 2:
+//                 char class[5];
+//             default:
+//                 string continue;
+//         };
+//     };
+// };
