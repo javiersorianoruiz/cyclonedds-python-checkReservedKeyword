@@ -19,7 +19,8 @@ from cyclonedds.pub import Publisher, DataWriter
 from cyclonedds.topic import Topic
 from cyclonedds.util import duration
 
-from module_test import struct_test_A, struct_test_B
+from module_test import struct_test, _assert
+
 
 qos = Qos(
     Policy.Reliability.BestEffort,
@@ -29,20 +30,25 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-topic_1 = Topic(domain_participant, 'module_test_struct_test_A_002', struct_test_A)
-topic_2 = Topic(domain_participant, 'module_test_struct_test_B_002', struct_test_B)
+#modify for each test
+topic = Topic(domain_participant, 'module_test_struct_test_008_c', struct_test)
 publisher = Publisher(domain_participant)
-writer_1 = DataWriter(publisher, topic_1)
-writer_2 = DataWriter(publisher, topic_2)
+writer = DataWriter(publisher, topic)
 
-msg_1 = struct_test_A(var='z')
-msg_2 = struct_test_B(var_2='y')
+
+#modify for each test
+msg1 = struct_test(union_field=_assert(discriminator=1,value=10))
+msg2 = struct_test(union_field=_assert(discriminator=2,value=['a','b','c','d','e']))
+msg3 = struct_test(union_field=_assert(discriminator=3,value="hello wold"))
 
 while True:
     time.sleep(3.0)
-    writer_1.write(msg_1)
-    print(">> Wrote struct_test_A msg_1")
+    writer.write(msg1)
+    print(">> Wrote struct_test msg1")
     time.sleep(3.0)
-    writer_2.write(msg_2)
-    print(">> Wrote struct_test_B msg_2")
-
+    writer.write(msg2)
+    print(">> Wrote struct_test msg2")
+    time.sleep(3.0)
+    writer.write(msg3)
+    #modify for each test
+    print(">> Wrote struct_test msg3")

@@ -1,0 +1,15 @@
+module module_test {
+    union assert switch (int8) {
+            case 1:
+                int16 break;
+            case 2:
+                char class[5];
+            default:
+                string continue;
+    };
+    struct struct_test {
+        assert as;
+    };
+};
+
+

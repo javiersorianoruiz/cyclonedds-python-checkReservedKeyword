@@ -1,5 +1,5 @@
 module module_test {
-    union union_type switch (int8) {
+    union assert switch (int8) {
             case 1:
                 int16 value_int;
             case 2:
@@ -8,6 +8,7 @@ module module_test {
                 string value_string;
     };
     struct struct_test {
-        union_type union_field;
+        assert union_field;
     };
 };
+
