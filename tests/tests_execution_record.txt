@@ -14,7 +14,8 @@ TEST            Description                 Responsible         Date Execution  
 004_test        field names of a struct     Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
                 with python reserverd keywords
 
-005_test        Module and struct           Jorge Alejandre
+005_test        Module and struct           Víctor Loeches      07-nov-22           OK
+                                            Javier Soriano
                 without any keyword
                 It seems the same test than 001_test 
 
