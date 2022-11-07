@@ -43,7 +43,7 @@ TEST            Description                 Responsible         Date Execution  
                                             Javier Soriano
 
 008_test_b      union with keywords         Victor Loeches      07-nov-22           OK
-                                            Javier Soriano
+                                            Javier Soriano                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_union
                 typename union keyword
 
 008_test_c      union with keywords         Victor Loeches      07-nov-22           OK
