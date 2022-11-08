@@ -19,7 +19,7 @@ from cyclonedds.pub import Publisher, DataWriter
 from cyclonedds.topic import Topic
 from cyclonedds.util import duration
 
-from module_test import struct_test,_import
+from module_test import struct_test,_except
 
 qos = Qos(
     Policy.Reliability.BestEffort,
@@ -36,7 +36,7 @@ writer = DataWriter(publisher, topic)
 
 
 #modify for each test
-msg = struct_test(bitmask_value=_import(value1=True,value2=False))
+msg = struct_test(bitmask_value=_except(value1=True,value2=False))
 
 while True:
     writer.write(msg)

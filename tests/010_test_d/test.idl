@@ -1,9 +1,9 @@
 module module_test {
     bitmask except {
-        value1,
-        value2
+        finally,
+        for
     };
     struct struct_test {
-        except bitmask_value;
+        except from;
     };
 };

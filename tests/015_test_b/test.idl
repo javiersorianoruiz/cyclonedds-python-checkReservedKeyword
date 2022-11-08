@@ -5,6 +5,5 @@ module module_test {
     };
 
     #pragma keylist struct_test nonlocal
-
 };
 

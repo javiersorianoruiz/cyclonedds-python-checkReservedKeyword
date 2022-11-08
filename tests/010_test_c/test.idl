@@ -1,9 +1,9 @@
 module module_test {
-    bitmask import {
-        yield,
-        value2
+    bitmask except {
+        finally,
+        for
     };
     struct struct_test {
-        import bitmask_value;
+        except bitmask_value;
     };
 };

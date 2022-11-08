@@ -1,8 +1,8 @@
 module module_test {
-    struct pass {
+    struct and {
         char var;
     };
-    struct continue : pass { //We have seen in the python code generated that inheritance is not implemented
+    struct continue : and { //We have seen in the python code generated that inheritance is not implemented
         char var2;
     };
 };

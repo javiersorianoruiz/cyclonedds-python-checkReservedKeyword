@@ -3,7 +3,5 @@ module module_test {
         @key uint16 key1;
         char var;
     };
-
-
 };
 

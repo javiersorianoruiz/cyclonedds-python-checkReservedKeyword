@@ -12,7 +12,7 @@ TEST            Description                 Responsible         Date Execution  
                 without any keyword
 
 004_test        field names of a struct     Javier Soriano      31-oct-22           OK , changed IDL, field char False is not allowed by the IDLC compiler, it raises a syntax error.
-                with python reserverd keywords
+                with python reserved keywords
 
 005_test        Module and struct           Víctor Loeches      07-nov-22           OK
                                             Javier Soriano
@@ -39,19 +39,19 @@ TEST            Description                 Responsible         Date Execution  
 007_test_e      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
                 child and parent names keywords                                     NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
 
-008_test_a      union with no keywords      Victor Loeches      07-nov-22           OK
+008_test_a      union with no keywords      Víctor Loeches      07-nov-22           OK
                                             Javier Soriano
 
-008_test_b      union with keywords         Victor Loeches      07-nov-22           OK
+008_test_b      union with keywords         Víctor Loeches      07-nov-22           OK
                                             Javier Soriano                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_union
                 typename union keyword
 
-008_test_c      union with keywords         Victor Loeches      07-nov-22           OK
+008_test_c      union with keywords         Víctor Loeches      07-nov-22           OK
                                             Javier Soriano
                 typename union keyword
                 name fields in the union keywords
                 
-008_test_d      union with keywords         Victor Loeches      07-nov-22           OK
+008_test_d      union with keywords         Víctor Loeches      07-nov-22           OK
                                             Javier Soriano
                 typename union keyword
                 name fields in the union keywords
@@ -88,28 +88,29 @@ TEST            Description                 Responsible         Date Execution  
                                                                                             function declaration 
 
 010_test_c      bitmask                     Javier Soriano      02-nov-22           FAIL, We have not yet implemented renaming of a member of a value of a bitmask with a name == python reserved keyword
-                with a member value with a python keyword                           FIXED, changed code: cyclonedds-python/idlpy/src/types.c +458
-                                                                                        modified method emit_bitmask, after for(idl_bit_value_t *v = bitmask->bit_values; v; v = idl_next(v)) {
+                with name python keywords                                           FIXED, changed code: cyclonedds-python/idlpy/src/types.c +458
+                with member values with a python keyword                                    modified method emit_bitmask, after for(idl_bit_value_t *v = bitmask->bit_values; v; v = idl_next(v)) {
 
-
+010_test_d      bitmask                     Víctor Loeches      02-nov-22           FAIL, We have not yet implemented renaming of a member of a value of a bitmask with a name == python reserved keyword
+                with name python keywords                                           FIXED, changed code: cyclonedds-python/idlpy/src/types.c +458
+                with member values with a python keyword                                    modified method emit_bitmask, after for(idl_bit_value_t *v = bitmask->bit_values; v; v = idl_next(v)) {
+                with bitmask variable a Python keyword
 
 011_test        typedef with name keywords  Javier Soriano      08-nov-22           FAIL, We have not yet implemented renaming of a typedef with a name == python reserved keyword
                 with two typedefs with name == python keyword                       FIXED, changed code: cyclonedds-python/idlpy/src/types.c method expand_typedef
 
-
-012_test        module with name keywords   Victor Loeches      02-nov-22           OK, after solving the test 013_test
+012_test        module with name keywords   Víctor Loeches      02-nov-22           OK, after solving the test 013_test
 
 013_test        nested modules              Javier Soriano      02-nov-22           FAIL, We have not yet implemented modules with name == python reserved keyword
                 modules with name keywords                                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_
                 
-014_test_a      const int                   Victor Loeches      08-nov-22          OK
+014_test_a      const int                   Víctor Loeches      08-nov-22          OK
                                             Javier Soriano
                 module field without name keyword
 
-014_test_b      const int                   Victor Loeches      08-nov-22          FAIL, We have not yet implemented modules with name == python reserved keyword
+014_test_b      const int                   Víctor Loeches      08-nov-22          FAIL, We have not yet implemented modules with name == python reserved keyword
                                             Javier Soriano                         FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_const
                 module field with name keyword
-
 
 015_test_a      annotations name keyword     All                08-nov-12          OK
                 #pragma keylist , no keywords 

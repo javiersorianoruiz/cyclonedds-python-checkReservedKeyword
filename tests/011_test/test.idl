@@ -6,4 +6,3 @@ module module_test {
         raise return;
     };
 };
-

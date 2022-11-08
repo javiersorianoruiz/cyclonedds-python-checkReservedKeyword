@@ -1,8 +1,12 @@
 module module_test {
     struct struct_test {
+        @key uint8 not;
         @key uint16 or;
+        @key uint32 pass;
+        @key uint64 try;
+        @key int8 while;
+        @key int16 with;
+        @key int32 yield;
         char var;
     };
-
 };
-

@@ -7,15 +7,3 @@ module module_test {
         bitmask_type bitmask_value;
     };
 };
-
-
-// module module_test {
-//     bitmask except {
-//         finally,
-//         for
-//     };
-//     struct struct_test {
-//         for from;
-//     };
-// };
-

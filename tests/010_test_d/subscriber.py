@@ -10,17 +10,20 @@
  * SPDX-License-Identifier: EPL-2.0 OR BSD-3-Clause
 """
 
-import time
-import random
-
-from cyclonedds.core import Qos, Policy
+from cyclonedds.core import Listener, Qos, Policy
 from cyclonedds.domain import DomainParticipant
-from cyclonedds.pub import Publisher, DataWriter
 from cyclonedds.topic import Topic
+from cyclonedds.sub import Subscriber, DataReader
 from cyclonedds.util import duration
 
 from module_test import struct_test
 
+class MyListener(Listener):
+    def on_liveliness_changed(self, reader, status):
+        print(">> Liveliness event")
+
+
+listener = MyListener()
 qos = Qos(
     Policy.Reliability.BestEffort,
     Policy.Deadline(duration(microseconds=10)),
@@ -30,16 +33,10 @@ qos = Qos(
 
 domain_participant = DomainParticipant(0)
 #modify for each test
-topic = Topic(domain_participant, 'module_test_struct_test_015_d', struct_test)
-publisher = Publisher(domain_participant)
-writer = DataWriter(publisher, topic)
-
-
-#modify for each test
-msg = struct_test(_not=1,_or=2,_pass=3,_try=4,_while=-1,_with=-2,_yield=-3,var='z')
+topic = Topic(domain_participant, 'module_test_struct_test_010_c' , struct_test)
+subscriber = Subscriber(domain_participant)
+reader = DataReader(domain_participant, topic, listener=listener)
 
 while True:
-    writer.write(msg)
-    #modify for each test
-    print(">> Wrote struct_test msg")
-    time.sleep(3.0)
+    for sample in reader.take_iter(timeout=duration(seconds=2)):
+        print(sample)

@@ -7,13 +7,3 @@ module module_test {
         def enum_def;
     };
 };
-
-// module module_test {
-//     enum def {
-//         del,
-//         elif
-//     };
-//     struct struct_test {
-//         def else;
-//     };
-// };
