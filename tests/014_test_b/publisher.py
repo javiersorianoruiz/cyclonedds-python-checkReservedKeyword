@@ -19,7 +19,7 @@ from cyclonedds.pub import Publisher, DataWriter
 from cyclonedds.topic import Topic
 from cyclonedds.util import duration
 
-from module_test import struct_test
+from module_test import struct_test,_lambda
 
 qos = Qos(
     Policy.Reliability.BestEffort,
@@ -30,16 +30,16 @@ qos = Qos(
 
 domain_participant = DomainParticipant(0)
 #modify for each test
-topic = Topic(domain_participant, 'module_test_struct_test_011', struct_test)
+topic = Topic(domain_participant, 'module_test_struct_test_014_b', struct_test)
 publisher = Publisher(domain_participant)
 writer = DataWriter(publisher, topic)
 
 
 #modify for each test
-msg = struct_test(_if=[1,2,3,4,5,6,7,8],_return=[10,20,30,40])
+msg = struct_test(var=['a','b','c'])
 
 while True:
     writer.write(msg)
     #modify for each test
-    print(">> Wrote struct_test msg")
+    print(">> Wrote struct_test msg with _lambda: " , _lambda)
     time.sleep(3.0)

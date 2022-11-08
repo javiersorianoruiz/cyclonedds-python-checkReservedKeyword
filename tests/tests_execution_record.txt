@@ -93,13 +93,22 @@ TEST            Description                 Responsible         Date Execution  
 
 
 
-011_test        typedef with name keywords  Jorge Alejandre
+011_test        typedef with name keywords  Javier Soriano      08-nov-22           FAIL, We have not yet implemented renaming of a typedef with a name == python reserved keyword
+                with two typedefs with name == python keyword                       FIXED, changed code: cyclonedds-python/idlpy/src/types.c method expand_typedef
+
+
 012_test        module with name keywords   Victor Loeches      02-nov-22           OK, after solving the test 013_test
 
 013_test        nested modules              Javier Soriano      02-nov-22           FAIL, We have not yet implemented modules with name == python reserved keyword
                 modules with name keywords                                          FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_
                 
-014_test        const int                   Jorge Alejandre
-                struct field name keyword
+014_test_a      const int                   Victor Loeches      08-nov-22          OK
+                                            Javier Soriano
+                module field without name keyword
+
+014_test_b      const int                   Victor Loeches      08-nov-22          FAIL, We have not yet implemented modules with name == python reserved keyword
+                                            Javier Soriano                         FIXED, changed code: cyclonedds-python/idlpy/src/types.c method emit_const
+                module field with name keyword
+
 
 015_test        annotations name keyword    Victor Loeches

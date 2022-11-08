@@ -1,5 +1,5 @@
 module module_test {
-    typedef int global[8]
+    typedef int8 global[8];
     typedef sequence<octet> raise;
     struct struct_test {
         global if;

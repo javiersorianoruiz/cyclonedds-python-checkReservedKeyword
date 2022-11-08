@@ -1,6 +1,6 @@
 module module_test {
-    const int lambda = 3;
+    const int8 lambda = 3;
     struct struct_test {
-        char var;
+        char var[lambda];
     };
 };
