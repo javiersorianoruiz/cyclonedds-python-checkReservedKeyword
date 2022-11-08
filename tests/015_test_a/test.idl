@@ -1,0 +1,10 @@
+module module_test {
+    struct struct_test {
+        uint16 key1;
+        char var;
+    };
+
+    #pragma keylist struct_test key1
+
+};
+

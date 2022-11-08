@@ -1,8 +1,10 @@
 module module_test {
     struct struct_test {
-        @key uint16 nonlocal;
-        @not uint16 or;
+        uint16 nonlocal;
         char var;
     };
+
+    #pragma keylist struct_test nonlocal
+
 };
 

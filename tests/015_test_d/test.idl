@@ -1,0 +1,8 @@
+module module_test {
+    struct struct_test {
+        @key uint16 or;
+        char var;
+    };
+
+};
+

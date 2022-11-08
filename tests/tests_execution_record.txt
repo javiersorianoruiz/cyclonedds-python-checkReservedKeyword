@@ -111,4 +111,22 @@ TEST            Description                 Responsible         Date Execution  
                 module field with name keyword
 
 
-015_test        annotations name keyword    Victor Loeches
+015_test_a      annotations name keyword     All                08-nov-12          OK
+                #pragma keylist , no keywords 
+
+015_test_b      annotations name keyword     All                08-nov-12          FAIL, We have not yet implemented field with name == python reserved keyword and requiere annotations
+                #pragma keylist , with a keyword field name                        FIXED, changed code: cyclonedds-python/idlpy/src/types.c methods:
+                                                                                        emit_field
+                                                                                        struct_decoration
+
+015_test_c      annotations name keyword     All                08-nov-12          FAIL, We have not yet implemented field with name == python reserved keyword and requiere annotations
+                @key decorator , NO keyword field name                             FIXED, changed code: cyclonedds-python/idlpy/src/types.c methods:
+                                                                                        emit_field
+                                                                                        struct_decoration
+                                                                                   FIXED, changed code python: cyclonedds/idl/_xt_builder.py method _xt_complete_struct_member
+
+015_test_d      annotations name keyword     All                08-nov-12          FAIL, We have not yet implemented field with name == python reserved keyword and requiere annotations
+                @key decorator , with a keyword field name                         FIXED, changed code: cyclonedds-python/idlpy/src/types.c methods:
+                                                                                        emit_field
+                                                                                        struct_decoration
+                                                                                   FIXED, changed code python: cyclonedds/idl/_xt_builder.py method _xt_complete_struct_member
