@@ -96,10 +96,10 @@ done
 
 #launching publisher and subscriber adapted for the messages defined in the IDL_FILE
 echo "Launching publisher during 10 seconds"
-python3 publisher.py &
+python3 -u publisher.py &
 
 echo "Launching subscriber during 10 seconds"
-python3 subscriber.py &
+python3 -u subscriber.py &
 
 #wait 10 seconds to check results
 sleep 10

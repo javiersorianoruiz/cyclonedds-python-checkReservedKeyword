@@ -2,6 +2,8 @@
 
 FILE_TEST="test.idl"
 
+#Example execution to save a file output console including errors
+#rm -f output-9-nov-22.txt && ./launch_tests.sh -a 2>&1 > output-9-nov-22.txt
 
 usage()
 {
