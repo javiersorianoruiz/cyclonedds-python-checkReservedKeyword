@@ -64,7 +64,8 @@ do
         #autogenerating python files from IDL file using the IDLC compiler for python
         echo "Generating python file from IDL file" $IDL_FILE
         #Using the install plugin:
-        /usr/local/lib/cyclonedds/bin/idlc -l/usr/local/lib/python3.8/dist-packages/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o ${WORK_PATH} ${WORK_PATH}/$IDL_FILE
+	/usr/local/lib/cyclonedds/bin/idlc -l py -Wno-implicit-extensibility -o ${WORK_PATH} ${WORK_PATH}/$IDL_FILE
+        #/usr/local/lib/cyclonedds/bin/idlc -l/usr/local/lib/python3.8/dist-packages/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o ${WORK_PATH} ${WORK_PATH}/$IDL_FILE
         #Using a build plugin in the home folder
         #/usr/local/lib/cyclonedds/bin/idlc -l/home/jasorian/cyclonedds-cxx/cyclonedds-python/build/lib.linux-x86_64-cpython-38/cyclonedds/_idlpy.cpython-38-x86_64-linux-gnu.so -Wno-implicit-extensibility -o ${WORK_PATH} ${WORK_PATH}/$IDL_FILE
         
@@ -96,10 +97,10 @@ done
 
 #launching publisher and subscriber adapted for the messages defined in the IDL_FILE
 echo "Launching publisher during 10 seconds"
-python3 publisher.py &
+python3 -u publisher.py &
 
 echo "Launching subscriber during 10 seconds"
-python3 subscriber.py &
+python3 -u subscriber.py &
 
 #wait 10 seconds to check results
 sleep 10
