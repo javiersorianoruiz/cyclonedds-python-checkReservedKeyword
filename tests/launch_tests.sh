@@ -3,7 +3,7 @@
 FILE_TEST="test.idl"
 
 #Example execution to save a file output console including errors
-#rm -f output-9-nov-22.txt && ./launch_tests.sh -a 2>&1 > output-9-nov-22.txt
+#rm -f results/output-9-nov-22.txt && ./launch_tests.sh -a 2>&1 > results/output-9-nov-22.txt
 
 usage()
 {
@@ -54,7 +54,7 @@ printf "\rProgress : [${_fill// /#}${_empty// /-}] ${_progress}%%"
 }
 
 #execute a test for each directory that it is found
-tests=`ls -d */ | sort -n`
+tests=`ls -d */ | sort -n | grep -v results`
 number_total_tests=`echo ${tests[@]} | wc -w`
 number_test=1
 echo "Number total of tests to be excecuted: " $number_total_tests
