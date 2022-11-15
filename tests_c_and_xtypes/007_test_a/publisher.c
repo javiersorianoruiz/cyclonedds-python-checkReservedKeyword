@@ -8,7 +8,7 @@
 int main (int argc, char ** argv)
 {
 
-  std::cout << "Checking patch generation, second commit" << std::endl;
+  std::cout << "Checking patch generation after merging" << std::endl;
   
   dds_entity_t participant;
   dds_entity_t topic;
