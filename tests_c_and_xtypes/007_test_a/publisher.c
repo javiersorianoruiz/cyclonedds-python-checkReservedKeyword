@@ -7,6 +7,9 @@
 
 int main (int argc, char ** argv)
 {
+
+  std::cout << "Checking patch generation" << std::endl;
+  
   dds_entity_t participant;
   dds_entity_t topic;
   dds_entity_t writer;
