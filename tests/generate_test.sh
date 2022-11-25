@@ -1,7 +1,11 @@
 #!/bin/bash
 
 IDL_FILE="test.idl"
-
+echo -e "\n\n\n\n\n\n\n\n"
+echo "**********************"
+echo $1
+echo "**********************"
+echo -e "\n\n\n"
 #show help info
 usage()
 {
