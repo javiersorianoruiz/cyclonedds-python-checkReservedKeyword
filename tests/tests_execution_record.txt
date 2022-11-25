@@ -7,6 +7,8 @@ TEST            Description                 Responsible         Date Execution  
                 without any keyword                                                 NOTE: We have seen in the Python code generated that inheritance is implemented.
                                                                                           Current test is sending and receiving several messages of differents structs oh the same module.
                                                                                           Jorge will investigate how to use inheritance in cyclonedds-python.
+                                            Jorge Alejandre    24-nov-22            FIXED,  tested with the version which solves the test. Issue 164
+
 
 003_test        nested modules              Víctor Loeches	02-nov-22	    OK, tested with the version which solves the test
                 without any keyword
@@ -29,15 +31,19 @@ TEST            Description                 Responsible         Date Execution  
 
 007_test_b      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
                 without any keyword                                                 NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
-                                                    
+                                            Jorge Alejandre    24-nov-22            FIXED,  tested with the version which solves the test. Issue 164                                                    
+
 007_test_c      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
                 parent name a keyword                                               NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
+                                            Jorge Alejandre    24-nov-22            PENDING,  with new version keywords not solved in inheritance
 
 007_test_d      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
                 child name a keyword                                                NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
+                                            Jorge Alejandre    24-nov-22            FIXED,  tested with the version which solves the test. Issue 164
 
 007_test_e      inheritance of structs      Javier Soriano      31-oct-22           PENDING, tested with the version which solves the test: 007_test_a
                 child and parent names keywords                                     NOTE: We have seen in the python code generated that inheritance is unknown for us (waiting for Jorge investigation)
+                                            Jorge Alejandre    24-nov-22            PENDING,  with new version keywords not solved in inheritance
 
 008_test_a      union with no keywords      Víctor Loeches      07-nov-22           OK
                                             Javier Soriano
