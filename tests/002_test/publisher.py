@@ -36,7 +36,7 @@ writer_1 = DataWriter(publisher, topic_1)
 writer_2 = DataWriter(publisher, topic_2)
 
 msg_1 = struct_test_A(var='z')
-msg_2 = struct_test_B(var_2='y')
+msg_2 = struct_test_B(var_2='y', var = 'p')
 
 while True:
     time.sleep(3.0)

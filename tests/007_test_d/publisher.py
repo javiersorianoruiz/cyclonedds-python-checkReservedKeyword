@@ -36,7 +36,7 @@ writer = DataWriter(publisher, topic)
 
 
 #modify for each test
-msg = _continue(var2='z')
+msg = _continue(var2='z', var = 'p')
 
 while True:
     writer.write(msg)
