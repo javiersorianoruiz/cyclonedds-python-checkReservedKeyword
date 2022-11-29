@@ -16,7 +16,7 @@ from cyclonedds.topic import Topic
 from cyclonedds.sub import Subscriber, DataReader
 from cyclonedds.util import duration
 
-from module_test import child
+from module_test import _and, child
 
 class MyListener(Listener):
     def on_liveliness_changed(self, reader, status):
@@ -32,11 +32,14 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-#modify for each test
-topic = Topic(domain_participant, 'module_test_struct_test_007_c' , child)
+topic_1 = Topic(domain_participant, 'module_test__and_007_b', _and)
+topic_2 = Topic(domain_participant, 'module_test_child_007_b', child)
 subscriber = Subscriber(domain_participant)
-reader = DataReader(domain_participant, topic, listener=listener)
+reader_1 = DataReader(domain_participant, topic_1, listener=listener)
+reader_2 = DataReader(domain_participant, topic_2, listener=listener)
 
 while True:
-    for sample in reader.take_iter(timeout=duration(seconds=2)):
+    for sample in reader_1.take_iter(timeout=duration(seconds=2)):
+        print(sample)
+    for sample in reader_2.take_iter(timeout=duration(seconds=2)):
         print(sample)

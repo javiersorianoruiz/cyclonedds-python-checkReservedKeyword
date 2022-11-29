@@ -19,7 +19,7 @@ from cyclonedds.pub import Publisher, DataWriter
 from cyclonedds.topic import Topic
 from cyclonedds.util import duration
 
-from module_test import _continue
+from module_test import parent, _continue
 
 qos = Qos(
     Policy.Reliability.BestEffort,
@@ -29,17 +29,19 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-#modify for each test
-topic = Topic(domain_participant, 'module_test_struct_test_007_d', _continue)
+topic_1 = Topic(domain_participant, 'module_test_parent_007_b', parent)
+topic_2 = Topic(domain_participant, 'module_test__continue_007_b', _continue)
 publisher = Publisher(domain_participant)
-writer = DataWriter(publisher, topic)
+writer_1 = DataWriter(publisher, topic_1)
+writer_2 = DataWriter(publisher, topic_2)
 
-
-#modify for each test
-msg = _continue(var2='z', var = 'p')
+msg_1 = parent(var='z')
+msg_2 = _continue(var_2='y', var='p')
 
 while True:
-    writer.write(msg)
-    #modify for each test
-    print(">> Wrote _continue msg")
     time.sleep(3.0)
+    writer_1.write(msg_1)
+    print(">> Wrote parent msg_1")
+    time.sleep(3.0)
+    writer_2.write(msg_2)
+    print(">> Wrote _continue msg_2")
