@@ -30,17 +30,13 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-#modify for each test
 topic = Topic(domain_participant, 'module_test_struct_test_007_a', _and)
 publisher = Publisher(domain_participant)
 writer = DataWriter(publisher, topic)
 
-
-#modify for each test
 msg = _and(var='z')
 
 while True:
     writer.write(msg)
-    #modify for each test
     print(">> Wrote _and msg")
     time.sleep(3.0)

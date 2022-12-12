@@ -32,7 +32,6 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-#modify for each test
 topic = Topic(domain_participant, 'module_test_struct_test_015_b' , struct_test)
 subscriber = Subscriber(domain_participant)
 reader = DataReader(domain_participant, topic, listener=listener)

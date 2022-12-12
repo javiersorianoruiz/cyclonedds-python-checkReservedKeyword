@@ -30,13 +30,10 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-#modify for each test
 topic = Topic(domain_participant, 'module_test_struct_test_008_b', struct_test)
 publisher = Publisher(domain_participant)
 writer = DataWriter(publisher, topic)
 
-
-#modify for each test
 msg1 = struct_test(union_field=_assert(discriminator=1,value=10))
 msg2 = struct_test(union_field=_assert(discriminator=2,value=['a','b','c','d','e']))
 msg3 = struct_test(union_field=_assert(discriminator=3,value="hello wold"))
@@ -50,5 +47,4 @@ while True:
     print(">> Wrote struct_test msg2")
     time.sleep(3.0)
     writer.write(msg3)
-    #modify for each test
     print(">> Wrote struct_test msg3")
