@@ -32,8 +32,8 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-topic_1 = Topic(domain_participant, 'module_test__and_007_b', _and)
-topic_2 = Topic(domain_participant, 'module_test_child_007_b', child)
+topic_1 = Topic(domain_participant, 'module_test__and_007_c', _and)
+topic_2 = Topic(domain_participant, 'module_test_child_007_c', child)
 subscriber = Subscriber(domain_participant)
 reader_1 = DataReader(domain_participant, topic_1, listener=listener)
 reader_2 = DataReader(domain_participant, topic_2, listener=listener)

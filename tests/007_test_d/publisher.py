@@ -29,8 +29,8 @@ qos = Qos(
 )
 
 domain_participant = DomainParticipant(0)
-topic_1 = Topic(domain_participant, 'module_test_parent_007_b', parent)
-topic_2 = Topic(domain_participant, 'module_test__continue_007_b', _continue)
+topic_1 = Topic(domain_participant, 'module_test_parent_007_d', parent)
+topic_2 = Topic(domain_participant, 'module_test__continue_007_d', _continue)
 publisher = Publisher(domain_participant)
 writer_1 = DataWriter(publisher, topic_1)
 writer_2 = DataWriter(publisher, topic_2)
